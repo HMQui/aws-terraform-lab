@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - echo "Installing cfn-lint and taskcat..."
+      - pip install cfn-lint taskcat
+  pre_build:
+    commands:
+      - echo "Starting syntax check with cfn-lint..."
+      - cfn-lint cloudformation/infrastructure.yaml
+  build:
+    commands:
+      - echo "Starting check with Taskcat..."
+      - taskcat lint 
+  post_build:
+    commands:
+      - echo "Check completed successfully!"

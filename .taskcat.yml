@@ -1,0 +1,7 @@
+project:
+  name: lab2-cfn-testing
+  regions:
+    - us-east-1
+tests:
+  lab-vpc-test:
+    template: cloudformation/infrastructure.yaml
