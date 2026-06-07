@@ -7,7 +7,7 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - pip install --upgrade pip
-      - pip install "pyyaml>=6.0.1"
+      - pip install setuptools "pyyaml>=6.0.1" 
       - echo "Installing cfn-lint and taskcat..."
       - pip install cfn-lint taskcat
   pre_build:
